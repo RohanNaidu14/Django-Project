@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+
+	<title>Home</title>
+	<style type="text/css">
+		#response_text{
+			background-color: rgb(146,255,172);
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="jumbotron jumbotron-fluid">
+  		<div class="container">
+    		<h1 class="display-4">{{ home_name }}</h1>
+  		</div>
+	</div>
+
+	<div class="container">
+		
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		  <a class="navbar-brand" href="http://localhost:8000/profile/">Profile</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+			<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="http://localhost:8000/helpdesk/">HelpDesk</a>
+						
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://localhost:8000/logout/">Logout</a>
+						
+					</li>
+					
+				</ul>
+				
+			</div>
+      
+		</nav>
+	</div>
+	<br>
+
+	<div class="container">
+		<hr>
+		<form method="post">
+
+			<textarea id="response_text" cols="150" rows="5">{{ response }}</textarea>
+			
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<br>
+			<br>
+			
+			
+		</form>
+	<hr>
+	</div>
+	
+
+
+<!-- below is a separate div for profile -->
+	<!-- <div class="container">
+	  	<div class="alert alert-info" role="alert">
+  			Visit your profile..
+  			<br>
+  			<br>
+  		<button class="btn btn-dark" type="button" id="button-2" onclick="window.location.href = 'http://localhost:8000/profile/';">Profile</button>
+	</div> -->
+
+
+<!-- this is older input box -->
+
+	<!-- <div class="container">
+	<hr>
+		<form method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">submit</button>
+		</form>
+		<h2>{{ text }}</h2>
+	<hr>
+	</div> -->
+
+	<!-- <div class='container'>
+	 	<div class="alert alert-success" role="alert">
+  			<h4 class="alert-heading">If you are done?</h4>
+  			<hr>
+
+  			<button class="btn btn-dark" type="button" id="button-2" onclick="window.location.href = 'http://localhost:8000/logout/';">Logout</button>
+		</div>
+	</div> -->
+
+	
+{% endblock %}

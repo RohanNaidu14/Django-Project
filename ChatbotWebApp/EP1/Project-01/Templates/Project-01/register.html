@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+	<title>Chatbot</title>
+{% endblock %}
+
+
+{% block body %}
+	<div class="jumbotron jumbotron-fluid">
+  		<div class="container">
+    		<h1 class="display-4">{{ register_name }}</h1>
+  		</div>
+	</div>
+
+	<div class="container">
+	  	<div class="alert alert-info" role="alert">
+  			Welcome. Please enter your details..
+	</div>
+	<hr>
+	    <form method="post">
+	      {% csrf_token %}
+	      {{ form.as_p }}
+	      <button type="submit" class="btn btn-primary">Submit</button>
+	    </form>
+	     
+	  <hr>
+	  </div>
+
+	<div class='container'>
+	 	<div class="alert alert-success" role="alert">
+  			<h4 class="alert-heading">Already a user?</h4>
+  			<hr>
+
+  			<button class="btn btn-dark" type="button" id="button-2" onclick="window.location.href = 'http://localhost:8000/login/';">Login</button>
+		</div>
+	</div>
+	  
+	
+    
+{% endblock %}

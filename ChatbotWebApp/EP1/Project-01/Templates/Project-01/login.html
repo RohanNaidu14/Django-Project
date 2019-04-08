@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+	<title>Login</title>
+{% endblock %}
+
+{% block body %}
+	<div class="jumbotron jumbotron-fluid">
+  		<div class="container">
+    		<h1 class="display-4">Login</h1>
+  		</div>
+	</div>
+
+	<div class="container">
+		
+		<div class="alert alert-info" role="alert">
+  			You can login here..
+		</div>
+		<!-- check what form.as_p is? -->
+		<form method="post">
+			{% csrf_token %}
+			{{ form.as_p }}  
+			<button type="submit" class="btn btn-primary">Login</button>
+		</form>
+	</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test101</title>
+	<!-- <script type="text/javascript">
+		// var test = "how are you?"
+
+		document.getElementById("Button").addEventListener("click", geTextData());
+
+		function geTextData(){
+			var text = "hello how are you ?"
+			
+			$.ajax({
+				type: "POST",
+				url: "my_ajax_view/",
+				dataType: "text",
+				cache: false, 
+				success: function(response){
+					console.log(response);
+				}
+			});
+	}
+	
+	</script>
+ -->
+</head>
+<body>
+	<textarea id="text-to-analyze" cols="100" rows="12"></textarea>	
+	<button id="button">Check this..</button>
+
+	<script>
+			document.querySelector("#button").onclick = geTextData();
+
+			function geTextData(){
+			var text = "hello how are you ?"
+			
+			$.ajax({
+				type: "POST",
+				url: "my_ajax_view/",
+				dataType: "text",
+				cache: false, 
+				success: function(response){
+					console.log(response);
+				}
+			});
+	}
+	</script>
+</body>
+</html>
