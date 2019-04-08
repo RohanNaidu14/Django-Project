@@ -1,1 +1,2 @@
-SQLServer is used as database. look in the database settings.
+SQLServer is used as database
+you can change it in DATABASES in settings.py 
