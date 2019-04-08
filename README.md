@@ -1,2 +1,2 @@
 # Djano-Project
-Chatbot Web App  using Django and python 
+Chatbot Web App  using Django, python and Chatterbot module 
